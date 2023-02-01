@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼각형 판별하기</title>
+</head>
+<body>
+    <script>
+        function solution(a, b, c){
+            let max;
+            let sum=0;
+
+            if(a>b) {max=a; sum+=b;}
+            else {max=b; sum+=a;}
+            if(c>max) { sum+=max; max=c;}
+            else {sum+=c;}
+            if(sum > max) return "YES";
+            else return "NO"
+
+        }
+
+        console.log(solution(6, 7, 11));
+        console.log(solution(13, 33, 17));
+
+        // 강의풀이
+        function solution2(a, b, c){
+            let answer="YES", max;
+            let sum=a+b+c;
+
+            if(a>b) max=a;
+            else max=b;
+            if(c>max) max=c;
+            if((sum-max)<=max) answer="NO";
+
+            return answer;
+
+        }
+
+        console.log(solution2(6, 7, 11));
+        console.log(solution2(13, 33, 17));
+
+        // 최댓값을 구하는 접근O -> a+b+c를 sum으로 두면 최댓값만 가지고 판별 가능... 매번 sum 구하는 과정 필요X
+    </script>
+</body>
+</html>

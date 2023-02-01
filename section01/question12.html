@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대문자로 통일</title>
+</head>
+<body>
+    <script>
+        function solution(s){         
+            let answer="";
+            for(let x of s){
+                if(x===x.toLowerCase()) answer+=x.toUpperCase();
+                else answer += x;
+            }
+            return answer;
+        }
+
+        let str="ItisTimeToStudy";
+        console.log(solution(str));
+
+        // 강의풀이
+        function solution2(s){         
+            let answer="";
+            for(let x of s){
+                let num=x.charCodeAt();
+                if(num>=97 && num<=122) answer+=String.fromCharCode(num-32);    // 아스키 코드에 대한 문자
+                else answer+=x;   
+            }
+            return answer;
+
+            // 사실 문자하나하나 탐색할 필요X
+            // let answer=s.toUpperCase();
+        }
+
+        console.log(solution2(str));
+
+    </script>
+</body>
+</html>

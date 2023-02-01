@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가운데 문자 출력</title>
+</head>
+<body>
+    <script>
+        function solution(s){  
+            let centerTxt="";
+            if(s.length%2 === 0){
+                let idx=s.length/2;
+                centerTxt+=(s[idx-1]+s[idx]);
+            }
+            else centerTxt+=s[Math.floor(s.length/2)];
+            
+            return centerTxt;
+        }
+        console.log(solution("study"));
+
+        // 강의 풀이
+        function solution2(s){  
+            let answer;
+            let mid=Math.floor(s.length/2);
+            // substring : 시작 인덱스로부터 종료 인텍스 전.까지 문자열 반환
+            if(s.length%2==1) answer=s.substring(mid, mid+1);
+            // substr : 시작 인덱스로부터 원하는 갯수만큼의 문자열 반환
+            // if(s.length%2==1) answer=s.substr(mid, 1);
+            else answer=s.substring(mid-1,mid+1);  
+            return answer;
+        }
+        console.log(solution2("study"));
+    </script>
+</body>
+</html>

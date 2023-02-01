@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연필개수</title>
+</head>
+<body>
+    <script>
+        function solution(n){
+            let das;
+            if(n%12 == 0) das=n/12;
+            else das=parseInt(n/12) + 1;
+            return das;
+        }
+
+        console.log(solution(25));
+        console.log(solution(178));
+
+        // 강의풀이
+        function solution2(n){
+            let answer = Math.ceil(n/12);
+            return answer;
+        }
+
+        console.log(solution(25));
+        console.log(solution(178));
+
+
+        // Math.ceil - 소숫점 존재하면 정수로 올림
+        // Math.floor - 소숫점 삭제
+        // Math.round - 반올림
+        // Math.sqrt - 제곱근
+        // Math.max
+        // Math.min
+        // Math.abs - 절댓값
+        
+    </script>
+</body>
+</html>

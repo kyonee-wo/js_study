@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홀수</title>
+</head>
+<body>
+    <script>
+        function solution(arr){
+            let odd=[], sum=0;
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]%2==1){
+                    odd.push(arr[i]);
+                    sum += arr[i];
+                }
+            }
+            let min=Math.min(...odd);
+            console.log(sum);
+            console.log(min);
+        }
+        
+        arr=[12, 77, 38, 41, 53, 92, 85];
+        solution(arr);
+
+        // 강의풀이
+        function solution2(arr){
+            let answer=[];
+            let sum=0, min=Number.MAX_SAFE_INTEGER;
+            for(let x of arr){
+                if(x%2===1){
+                    sum+=x;
+                    if(x<min) min=x;
+                }
+            }
+            answer.push(sum);
+            answer.push(min);
+            return answer;
+        }
+        
+        console.log(solution2(arr));
+
+        // == 이나 === 이나 둘 중 하나로 통일
+        // === 는 type까지 비교
+
+        // for(let x of arr)
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대소문자 변환</title>
+</head>
+<body>
+    <script>
+        function solution(s){  
+            let change="";
+            for(let x of s){
+
+                // 방법1
+                // if(x===x.toUpperCase()) change+=x.toLowerCase();
+                // else change+=x.toUpperCase();
+
+                // 방법2 (아스키 코드 - 복습용)
+                let num=x.charCodeAt();
+                if(num>=97 && num<=122) change+=String.fromCharCode(num-32);
+                else change+=String.fromCharCode(num+32);
+            }
+            return change;
+        }
+
+        console.log(solution("StuDY"));
+
+        // 강의 풀이 - 동일
+    </script>
+</body>
+</html>

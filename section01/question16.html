@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중복문자 제거</title>
+</head>
+<body>
+    <script>
+        function solution(s){  
+            let answer="";
+            
+            for(let x of s){
+                // indexOf : 문자를 원하는 index부터 탐색하여 발견한 첫번째 index 리턴, 발견못하면 -1 리턴
+                if(answer.indexOf(x)===-1) answer+=x;
+            }
+            
+            return answer;
+        }
+        console.log(solution("ksekkset"));
+
+        // 강의 풀이
+        function solution2(s){  
+            let answer="";
+            
+            for(let i=0;i<s.length;i++){
+                if(s.indexOf(s[i])===i) answer+=s[i];
+            }
+
+            return answer;
+        }
+        console.log(solution2("ksekkset"));
+
+        function anotherQ(s){
+            let answer=0;
+            let pos=s.indexOf('k');
+
+            while(pos!==-1){
+                answer++;
+                pos=s.indexOf('k', pos+1);
+            }
+            return answer;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중복단어 제거</title>
+</head>
+<body>
+    <script>
+        function solution(s){  
+            let answer=[];
+
+            for(let i=0;i<s.length;i++){
+                if(i===s.indexOf(s[i])) answer.push(s[i]);
+            }
+            
+            return answer;
+        }
+        let str=["good", "time", "good", "time", "student"];
+        console.log(solution(str));
+
+        // 강의 풀이
+        function solution2(s){  
+            let answer;
+
+            answer=s.filter((v,i)=>{
+                // 참을 리턴한 v 값 새로운 배열로
+                if(s.indexOf(v)===i) return true;
+
+                // return s.indexOf(v)===i;
+            });
+            
+            return answer;
+        }
+        console.log(solution2(str));
+    </script>
+</body>
+</html>
