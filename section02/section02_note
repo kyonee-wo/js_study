@@ -1,0 +1,3 @@
+[ Section02 정리 ]
+
+Array.from(obj, mapFn, thisArg)
