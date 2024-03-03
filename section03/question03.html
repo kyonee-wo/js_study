@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>숫자만 추출</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        function solution(str){
+            let answer="";
+            let flag=0;
+            let s=str.toLowerCase().replace(/[a-z]/g,'').split('');
+
+            for(let x of s){
+                if(flag===1){
+                    answer+=x;
+                } 
+                else if(x!=="0"&&flag===0) {
+                    flag=1;
+                    answer+=x;
+                }
+            }
+
+            // 함수 사용
+            let answer2=Number(str.toLowerCase().replace(/[a-z]/g,''));
+
+            return (answer + ' / ' + answer2);
+        }
+        
+        let str="g0en2T0s8eSoft";
+        console.log(solution(str));
+
+        // 강의 해설
+        function solution2(str){
+            let answer="";
+
+            for(let x of str){
+                if(!isNaN(x)) answer+=x;
+            }
+
+            return parseInt(answer);
+        }
+        
+        console.log(solution2(str));
+
+        // parseInt 사용 금지시
+        function solution3(str){
+            let answer=0;
+
+            for(let x of str){
+                if(!isNaN(x)) answer=answer*10+Number(x);
+            }
+
+            return answer;
+        }
+        
+        console.log(solution3(str));
+    </script>
+</body>
+</html>

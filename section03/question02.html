@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>유효한 팰린드롬</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        function solution(s){
+            let answer="YES";
+            // Q. 특수문자 제거 정규식...?
+            s=s.toLowerCase().replace(/[,:;]\s/g,'');
+            if(s.split('').reverse().join('')!==s) return "NO";
+
+            return answer;
+        }
+        
+        let str="found7, time: study; Yduts; emit, 7Dnuof";
+        console.log(solution(str));
+
+        // 강의 해설
+        function solution2(s){
+            let answer="YES";
+            // 조건이 알파벳외에는 생각하지 않는다는것(숫자도 무시)
+            s=s.toLowerCase().replace(/[^a-z]/g,'');
+            if(s.split('').reverse().join('')!==s) return "NO";
+
+            return answer;
+        }
+        
+        console.log(solution2(str));
+
+        // 정규식 -> 공부 필.
+    </script>
+</body>
+</html>
